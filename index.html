@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PRISM - Crowd Intelligence Dashboard</title>
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRISM - Crowd Intelligence Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
@@ -16,159 +13,91 @@
     <p>Predictive Risk Intelligence for Safety & Monitoring</p>
 </header>
 
-
 <div class="dashboard">
 
+    <div class="card">
+        <h2>Total Crowd</h2>
+        <h1 id="crowd">24,580</h1>
+    </div>
 
-<!-- Stats -->
+    <div class="card">
+        <h2>Risk Score</h2>
+        <h1 id="risk">Medium</h1>
+    </div>
 
-<div class="card">
-<h2>Total Crowd</h2>
-<h1 id="crowd">24,580</h1>
-</div>
+    <div class="card">
+        <h2>Predicted Congestion</h2>
+        <h1>5 mins</h1>
+        <p id="prediction">High movement near Stage Area</p>
+    </div>
 
+    <div class="map card">
+        <h2>Live Crowd Map</h2>
+        <div class="zone green">Main Entrance</div>
+        <div class="zone red">Stage Area</div>
+        <div class="zone yellow">Food Zone</div>
+        <div class="zone red">Gate 2</div>
+    </div>
 
-<div class="card">
-<h2>Risk Score</h2>
-<h1 id="risk">Medium</h1>
-</div>
+    <div class="card alert-card">
+        <h2>🔍 Missing Person Finder</h2>
+        <div class="missing-person-status">
+            <p><strong>Target:</strong> <span class="highlight-red">ID 02 (Child)</span></p>
+            <p><strong>Last Seen:</strong> GATE 2</p>
+            <p><strong>Time Elapsed:</strong> <span id="missing-time">8 mins ago</span></p>
+        </div>
+    </div>
 
+    <div class="card wide">
+        <h2>Live ID Tracking</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Current Zone</th>
+                <th>Movement</th>
+                <th>Time Spent</th>
+            </tr>
+            <tr>
+                <td>ID 01</td>
+                <td>Main Entrance</td>
+                <td>→ Stage Area</td>
+                <td>12 mins</td>
+            </tr>
+            <tr class="danger-row">
+                <td>ID 02</td>
+                <td>Gate 2</td>
+                <td><strong>Lost Child Alert</strong></td>
+                <td id="table-missing-time">8 mins ago</td>
+            </tr>
+            <tr>
+                <td>ID 03</td>
+                <td>Food Zone</td>
+                <td>→ Exit</td>
+                <td>5 mins</td>
+            </tr>
+        </table>
+    </div>
 
-<div class="card">
-<h2>Predicted Congestion</h2>
-<h1>5 mins</h1>
-<p id="prediction">High movement near Stage Area</p>
-</div>
+    <div class="card">
+        <h2>AI Alerts</h2>
+        <ul id="alerts">
+            <li>⚠ Crowd density increasing at Gate 2</li>
+            <li class="alert-critical">🚨 Lost child detected near Gate 2</li>
+            <li>✓ Normal flow at Main Entrance</li>
+        </ul>
+    </div>
 
-
-<!-- Map -->
-
-<div class="map card">
-
-<h2>Live Crowd Map</h2>
-
-<div class="zone green">
-Main Entrance
-</div>
-
-<div class="zone red">
-Stage Area
-</div>
-
-<div class="zone yellow">
-Food Zone
-</div>
-
-<div class="zone red">
-Gate 2
-</div>
-
-
-</div>
-
-
-
-<!-- People Tracking -->
-
-
-<div class="card wide">
-
-<h2>Live ID Tracking</h2>
-
-
-<table>
-
-<tr>
-<th>ID</th>
-<th>Current Zone</th>
-<th>Movement</th>
-<th>Time Spent</th>
-</tr>
-
-
-<tr>
-<td>ID 01</td>
-<td>Main Entrance</td>
-<td>→ Stage Area</td>
-<td>12 mins</td>
-</tr>
-
-
-<tr>
-<td>ID 02</td>
-<td>Gate 2</td>
-<td>Lost Child Alert</td>
-<td>8 mins ago</td>
-</tr>
-
-
-<tr>
-<td>ID 03</td>
-<td>Food Zone</td>
-<td>→ Exit</td>
-<td>5 mins</td>
-</tr>
-
-
-</table>
+    <div class="card">
+        <h2>AI Recommendations</h2>
+        <div id="recommendations">
+            <p>• Open alternate route towards Exit B</p>
+            <p>• Deploy 3 officers near Stage Area</p>
+            <p>• Divert crowd from Gate 2</p>
+        </div>
+    </div>
 
 </div>
-
-
-
-
-<!-- Alerts -->
-
-
-<div class="card">
-
-<h2>AI Alerts</h2>
-
-<ul id="alerts">
-
-<li>⚠ Crowd density increasing at Gate 2</li>
-
-<li>⚠ Lost child detected near Gate 2</li>
-
-<li>✓ Normal flow at Main Entrance</li>
-
-</ul>
-
-</div>
-
-
-
-
-<!-- AI Suggestions -->
-
-<div class="card">
-
-<h2>AI Recommendations</h2>
-
-<div id="recommendations">
-
-<p>
-• Open alternate route towards Exit B
-</p>
-
-<p>
-• Deploy 3 officers near Stage Area
-</p>
-
-<p>
-• Divert crowd from Gate 2
-</p>
-
-</div>
-
-
-</div>
-
-
-</div>
-
 
 <script src="script.js"></script>
-
 </body>
 </html>
